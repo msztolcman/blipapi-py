@@ -19,7 +19,7 @@ setup (
     description         = 'Blip! (http://blip.pl) communication library.',
     author              = 'Marcin Sztolcman',
     author_email        = 'marcin@urzenia.net',
-    url                 = 'http://blipapi.googlecode.com',
+    url                 = 'http://github.com/mysz/blipapi-py',
     packages            = ['blipapi', ],
 
     long_description    = '''
