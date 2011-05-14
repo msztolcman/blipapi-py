@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# $Id: __init__.py 50 2009-04-19 13:53:00Z urzenia $
 #
 # Blip! (http://blip.pl) communication library.
 # Author: Marcin Sztolcman <marcin /at/ urzenia /dot/ net>
