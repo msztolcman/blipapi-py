@@ -7,7 +7,7 @@
 # License: http://opensource.org/licenses/lgpl-3.0.html The GNU Lesser General Public License, version 3.0 (LGPLv3)
 
 import copy
-import httplib
+import http.client
 import socket
 import time
 
@@ -32,9 +32,12 @@ except ImportError:
         except ImportError:
             pass
 
-from _utils import arr2qstr
+from ._utils import arr2qstr
 
-
+try:
+    callable ()
+except:
+    callable = lambda d: hasattr (d, '__call__')
 
 class BlipApiError (Exception):
     pass
@@ -111,7 +114,7 @@ class BlipApi (object):
             return True
 
         if self._shaperd_data[0] > self._rpm:
-            print self._shaperd_data
+            print (self._shaperd_data)
             return False
 
         return True
@@ -140,7 +143,7 @@ class BlipApi (object):
             self.connect ()
 
     def connect (self):
-        self._ch = httplib.HTTPConnection (self.api_uri, port=httplib.HTTP_PORT)
+        self._ch = http.client.HTTPConnection (self.api_uri, port=http.client.HTTP_PORT)
         if self._ch:
             self.shaperd_reset ()
             self._ch.set_debuglevel (self.debug)
@@ -212,9 +215,9 @@ class BlipApi (object):
                 raise BlipApiError ('Too many requests')
 
             self._ch.request (req_data['method'].upper (), url, body=req_body, headers=headers)
-        except socket.error, (errno, error):
+        except socket.error as e:
             self._ch = None
-            raise BlipApiError ('Connection error: [%d] %s' % (errno, error))
+            raise BlipApiError ('Connection error: [%d] %s' % (e.errno, e.error))
         else:
             response    = self._ch.getresponse ()
 
@@ -256,7 +259,7 @@ class BlipApi (object):
         try:
             module = self._import ('blipapi.' + module_name)
             method = getattr (module, method)
-        except Exception, e:
+        except Exception as e:
             raise AttributeError ('Command not found: %s.' % fn)
 
         if not callable (method):
