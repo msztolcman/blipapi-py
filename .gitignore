@@ -3,3 +3,5 @@ build
 c.sh
 dist
 tools/app_data
+*.pyc
+__pycache__/
