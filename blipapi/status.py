@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# $Id$
 #
 # Blip! (http://blip.pl) communication library.
 # Author: Marcin Sztolcman <marcin /at/ urzenia /dot/ net>

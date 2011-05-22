@@ -2,16 +2,16 @@ Autor:
 Marcin Sztolcman (http://urzenia.net)
 
 Adres:
-http://blipapi.googlecode.com
+https://github.com/mysz/blipapi-py
 
 Opis:
-BlipApi.py jest to biblioteka służąca do komunikacji z serwisem Blip!
+blipapi-py jest to biblioteka służąca do komunikacji z serwisem Blip!
 (http://blip.pl). Zawiera kompletne, ciągle uzupełniane API, pozwalające na
 wszystkie operacje jakie udostępnia API Blip!a. Dokumentacja API znajduje
 się pod adresem: http://www.blip.pl/api-0.02.html
 
 Błędy i ew. pomysły proszę zgłaszać na specjalnie do tego celu przeznaczonym
-issue trackerze: http://code.google.com/p/blipapi/issues/list
+issue trackerze: https://github.com/mysz/blipapi-py/issues
 
 Wymagania:
 - Python w wersji 2.5 lub wyżej
@@ -27,8 +27,8 @@ blipapi = BlipApi (
 updates = blipapi.update_read (user = 'mysz')
 print updates
 
-// Alternatywnie, gdy nazwe metody przechowujemy w jakiejs zmiennej, moze
-// byc prosciej uzyc:
+// Alternatywnie, gdy nazwę metody przechowujemy w jakiejś zmiennej, może
+// być prościej użyć:
 
 blipapi = BlipApi (
     oauth_token = access_token,
